@@ -9,7 +9,7 @@
 import UIKit
 // https://gist.github.com/bwhiteley/049e4bede49e71a6d2e2
 
-protocol NibView: class {
+public protocol NibView: class {
     var contentView:UIView! { get set }
     
     var bounds:CGRect { get }
@@ -17,7 +17,7 @@ protocol NibView: class {
 }
 
 extension NibView {
-    func loadContentView(nibName: String? = nil) {
+    public func loadContentView(nibName: String? = nil) {
         guard let nibName = nibName ?? NSStringFromClass(type(of:self)).components(separatedBy: ".").last else {
             fatalError("Unable to determine nib name")
         }
