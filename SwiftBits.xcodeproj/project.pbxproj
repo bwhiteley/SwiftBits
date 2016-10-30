@@ -164,7 +164,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
 				LastUpgradeCheck = 0810;
-				ORGANIZATIONNAME = "SwiftBit";
+				ORGANIZATIONNAME = SwiftBit;
 				TargetAttributes = {
 					714B1CE61DC588AC00469BFB = {
 						CreatedOnToolsVersion = 8.1;
@@ -356,6 +356,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SwiftBits/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.swift-bit.SwiftBits";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -377,6 +378,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SwiftBits/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.swift-bit.SwiftBits";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -430,6 +432,7 @@
 				714B1CFD1DC588AC00469BFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		714B1CFE1DC588AC00469BFB /* Build configuration list for PBXNativeTarget "SwiftBitsTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +441,7 @@
 				714B1D001DC588AC00469BFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
