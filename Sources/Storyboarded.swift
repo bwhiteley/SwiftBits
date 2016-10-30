@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol Storyboarded: class {
+public protocol Storyboarded: class {
     static func storyboardInfo() -> (storyboardName:String, storyboardId:String?)
 }
 
