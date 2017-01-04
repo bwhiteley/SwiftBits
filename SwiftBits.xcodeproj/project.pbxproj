@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71394DC51E0CD99200F6B0F3 /* UIResponder+FirstResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71394DC41E0CD99100F6B0F3 /* UIResponder+FirstResponder.swift */; };
 		7142ACA91DEAC2B10017C18D /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7142ACA81DEAC2B10017C18D /* ItemsViewController.swift */; };
 		714B1CF11DC588AC00469BFB /* SwiftBits.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 714B1CE71DC588AC00469BFB /* SwiftBits.framework */; };
 		714B1CF61DC588AC00469BFB /* SwiftBitsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714B1CF51DC588AC00469BFB /* SwiftBitsTests.swift */; };
@@ -15,6 +16,7 @@
 		714B1D081DC5899100469BFB /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714B1D071DC5899100469BFB /* UITableView.swift */; };
 		714B1D0A1DC589C400469BFB /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714B1D091DC589C400469BFB /* NibView.swift */; };
 		714B1D0C1DC58AF200469BFB /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714B1D0B1DC58AF200469BFB /* Storyboarded.swift */; };
+		71636FB61DF7CA1200C585A9 /* SafeSyncQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71636FB51DF7CA1200C585A9 /* SafeSyncQueue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		71394DC41E0CD99100F6B0F3 /* UIResponder+FirstResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIResponder+FirstResponder.swift"; sourceTree = "<group>"; };
 		7142ACA81DEAC2B10017C18D /* ItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		714B1CE71DC588AC00469BFB /* SwiftBits.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftBits.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		714B1CEA1DC588AC00469BFB /* SwiftBits.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftBits.h; sourceTree = "<group>"; };
@@ -39,6 +42,7 @@
 		714B1D071DC5899100469BFB /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		714B1D091DC589C400469BFB /* NibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 		714B1D0B1DC58AF200469BFB /* Storyboarded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		71636FB51DF7CA1200C585A9 /* SafeSyncQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeSyncQueue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,11 +104,13 @@
 		714B1D021DC588D200469BFB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				714B1D051DC5891200469BFB /* Optional.swift */,
-				714B1D071DC5899100469BFB /* UITableView.swift */,
-				714B1D091DC589C400469BFB /* NibView.swift */,
-				714B1D0B1DC58AF200469BFB /* Storyboarded.swift */,
 				7142ACA81DEAC2B10017C18D /* ItemsViewController.swift */,
+				714B1D091DC589C400469BFB /* NibView.swift */,
+				714B1D051DC5891200469BFB /* Optional.swift */,
+				714B1D0B1DC58AF200469BFB /* Storyboarded.swift */,
+				714B1D071DC5899100469BFB /* UITableView.swift */,
+				71636FB51DF7CA1200C585A9 /* SafeSyncQueue.swift */,
+				71394DC41E0CD99100F6B0F3 /* UIResponder+FirstResponder.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -223,9 +229,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				714B1D061DC5891200469BFB /* Optional.swift in Sources */,
+				71636FB61DF7CA1200C585A9 /* SafeSyncQueue.swift in Sources */,
 				714B1D081DC5899100469BFB /* UITableView.swift in Sources */,
 				714B1D0A1DC589C400469BFB /* NibView.swift in Sources */,
 				7142ACA91DEAC2B10017C18D /* ItemsViewController.swift in Sources */,
+				71394DC51E0CD99200F6B0F3 /* UIResponder+FirstResponder.swift in Sources */,
 				714B1D0C1DC58AF200469BFB /* Storyboarded.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
