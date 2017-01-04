@@ -26,7 +26,7 @@ public struct CellDescriptor {
     }
 }
 
-public final class ItemsViewController<Item>: UITableViewController {
+open class ItemsViewController<Item>: UITableViewController {
     public var items: [[Item]] = []
     let cellDescriptor: (Item) -> CellDescriptor
     public var didSelect: (Item) -> () = { _ in }
@@ -42,20 +42,20 @@ public final class ItemsViewController<Item>: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = items[indexPath.section][indexPath.row]
         didSelect(item)
     }
     
-    override public func numberOfSections(in tableView: UITableView) -> Int {
+    override open func numberOfSections(in tableView: UITableView) -> Int {
         return items.count
     }
     
-    override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items[section].count
     }
     
-    override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = items[indexPath.section][indexPath.row]
         let descriptor = cellDescriptor(item)
         
