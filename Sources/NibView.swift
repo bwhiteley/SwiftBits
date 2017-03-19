@@ -12,8 +12,7 @@ import UIKit
 public protocol NibView: class {
     var contentView:UIView! { get set }
     
-    var bounds:CGRect { get }
-    func addSubview(_ view:UIView)
+    func embed(_ view: UIView)
 }
 
 extension NibView {
@@ -25,8 +24,6 @@ extension NibView {
         guard let contentView = self.contentView else {
             fatalError("contentView is nil after loading nib")
         }
-        contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.addSubview(contentView)
+        self.embed(contentView)
     }
 }

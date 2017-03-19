@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7135DBB81E7DF54F00C91CEA /* UIView+embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7135DBB71E7DF54F00C91CEA /* UIView+embed.swift */; };
 		71394DC51E0CD99200F6B0F3 /* UIResponder+FirstResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71394DC41E0CD99100F6B0F3 /* UIResponder+FirstResponder.swift */; };
 		7142ACA91DEAC2B10017C18D /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7142ACA81DEAC2B10017C18D /* ItemsViewController.swift */; };
 		714B1CF11DC588AC00469BFB /* SwiftBits.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 714B1CE71DC588AC00469BFB /* SwiftBits.framework */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7135DBB71E7DF54F00C91CEA /* UIView+embed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+embed.swift"; sourceTree = "<group>"; };
 		71394DC41E0CD99100F6B0F3 /* UIResponder+FirstResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIResponder+FirstResponder.swift"; sourceTree = "<group>"; };
 		7142ACA81DEAC2B10017C18D /* ItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		714B1CE71DC588AC00469BFB /* SwiftBits.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftBits.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +113,7 @@
 				714B1D071DC5899100469BFB /* UITableView.swift */,
 				71636FB51DF7CA1200C585A9 /* SafeSyncQueue.swift */,
 				71394DC41E0CD99100F6B0F3 /* UIResponder+FirstResponder.swift */,
+				7135DBB71E7DF54F00C91CEA /* UIView+embed.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7135DBB81E7DF54F00C91CEA /* UIView+embed.swift in Sources */,
 				714B1D061DC5891200469BFB /* Optional.swift in Sources */,
 				71636FB61DF7CA1200C585A9 /* SafeSyncQueue.swift in Sources */,
 				714B1D081DC5899100469BFB /* UITableView.swift in Sources */,
