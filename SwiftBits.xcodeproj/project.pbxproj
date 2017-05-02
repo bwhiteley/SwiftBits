@@ -18,6 +18,7 @@
 		714B1D0A1DC589C400469BFB /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714B1D091DC589C400469BFB /* NibView.swift */; };
 		714B1D0C1DC58AF200469BFB /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714B1D0B1DC58AF200469BFB /* Storyboarded.swift */; };
 		71636FB61DF7CA1200C585A9 /* SafeSyncQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71636FB51DF7CA1200C585A9 /* SafeSyncQueue.swift */; };
+		71DB6F721EB5601300D89AFA /* UIViewController+embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DB6F711EB5601300D89AFA /* UIViewController+embed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		714B1D091DC589C400469BFB /* NibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 		714B1D0B1DC58AF200469BFB /* Storyboarded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		71636FB51DF7CA1200C585A9 /* SafeSyncQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeSyncQueue.swift; sourceTree = "<group>"; };
+		71DB6F711EB5601300D89AFA /* UIViewController+embed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+embed.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				71636FB51DF7CA1200C585A9 /* SafeSyncQueue.swift */,
 				71394DC41E0CD99100F6B0F3 /* UIResponder+FirstResponder.swift */,
 				7135DBB71E7DF54F00C91CEA /* UIView+embed.swift */,
+				71DB6F711EB5601300D89AFA /* UIViewController+embed.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				7135DBB81E7DF54F00C91CEA /* UIView+embed.swift in Sources */,
 				714B1D061DC5891200469BFB /* Optional.swift in Sources */,
 				71636FB61DF7CA1200C585A9 /* SafeSyncQueue.swift in Sources */,
+				71DB6F721EB5601300D89AFA /* UIViewController+embed.swift in Sources */,
 				714B1D081DC5899100469BFB /* UITableView.swift in Sources */,
 				714B1D0A1DC589C400469BFB /* NibView.swift in Sources */,
 				7142ACA91DEAC2B10017C18D /* ItemsViewController.swift in Sources */,
