@@ -19,6 +19,8 @@
 		714B1D0C1DC58AF200469BFB /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714B1D0B1DC58AF200469BFB /* Storyboarded.swift */; };
 		71636FB61DF7CA1200C585A9 /* SafeSyncQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71636FB51DF7CA1200C585A9 /* SafeSyncQueue.swift */; };
 		71DB6F721EB5601300D89AFA /* UIViewController+embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DB6F711EB5601300D89AFA /* UIViewController+embed.swift */; };
+		CC02DDD31DCA6ED100A137C3 /* AtomicProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC02DDD21DCA6ED100A137C3 /* AtomicProperty.swift */; };
+		CC03A3831E9F0EF500DBD8E8 /* ViewControllerBehaviors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC03A3821E9F0EF500DBD8E8 /* ViewControllerBehaviors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		714B1D0B1DC58AF200469BFB /* Storyboarded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		71636FB51DF7CA1200C585A9 /* SafeSyncQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeSyncQueue.swift; sourceTree = "<group>"; };
 		71DB6F711EB5601300D89AFA /* UIViewController+embed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+embed.swift"; sourceTree = "<group>"; };
+		CC02DDD21DCA6ED100A137C3 /* AtomicProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtomicProperty.swift; sourceTree = "<group>"; };
+		CC03A3821E9F0EF500DBD8E8 /* ViewControllerBehaviors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerBehaviors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,8 @@
 				71394DC41E0CD99100F6B0F3 /* UIResponder+FirstResponder.swift */,
 				7135DBB71E7DF54F00C91CEA /* UIView+embed.swift */,
 				71DB6F711EB5601300D89AFA /* UIViewController+embed.swift */,
+				CC02DDD21DCA6ED100A137C3 /* AtomicProperty.swift */,
+				CC03A3821E9F0EF500DBD8E8 /* ViewControllerBehaviors.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7135DBB81E7DF54F00C91CEA /* UIView+embed.swift in Sources */,
+				CC03A3831E9F0EF500DBD8E8 /* ViewControllerBehaviors.swift in Sources */,
 				714B1D061DC5891200469BFB /* Optional.swift in Sources */,
 				71636FB61DF7CA1200C585A9 /* SafeSyncQueue.swift in Sources */,
 				71DB6F721EB5601300D89AFA /* UIViewController+embed.swift in Sources */,
@@ -243,6 +250,7 @@
 				7142ACA91DEAC2B10017C18D /* ItemsViewController.swift in Sources */,
 				71394DC51E0CD99200F6B0F3 /* UIResponder+FirstResponder.swift in Sources */,
 				714B1D0C1DC58AF200469BFB /* Storyboarded.swift in Sources */,
+				CC02DDD31DCA6ED100A137C3 /* AtomicProperty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
