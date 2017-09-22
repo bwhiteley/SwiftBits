@@ -17,8 +17,8 @@ final class AtomicProperty<A> {
         return queue.sync { self._value }
     }
     
-    func mutate(_ transform: (inout A) -> ()) {
-        queue.sync {
+    func mutate<Value>(_ transform: (inout A) -> Value) -> Value {
+        return queue.sync {
             transform(&self._value)
         }
     }
