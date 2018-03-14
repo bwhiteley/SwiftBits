@@ -19,7 +19,7 @@ extension UIResponder {
         return _firstResponder
     }
     
-    private dynamic func findFirstResponder(_ sender:AnyObject) {
+    @objc private func findFirstResponder(_ sender:AnyObject) {
         _firstResponder = self
     }
 }
