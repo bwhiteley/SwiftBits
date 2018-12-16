@@ -37,6 +37,7 @@ open class ItemsViewController<Item>: UITableViewController, UISearchResultsUpda
     public var didSelect: (Item) -> () = { _ in }
     var reuseIdentifiers: Set<String> = []
     
+    #if os(iOS)
     // This makes it behave like Mail.app. Setting this to true will
     // override navigationItem.hidesSearchBarWhenScrolling
     public var showsSearchBarOnFirstLoadThenHidesWhenScrolling: Bool = false
@@ -63,15 +64,18 @@ open class ItemsViewController<Item>: UITableViewController, UISearchResultsUpda
             }
         }
     }
+    #endif
     
     public init(items: [[Item]], style: UITableViewStyle = .plain, cellDescriptor: @escaping (Item) -> CellDescriptor) {
         self.cellDescriptor = cellDescriptor
         super.init(style: style)
         self.items = items
         self.filteredItems = items
+        #if os(iOS)
         self.searchController.dimsBackgroundDuringPresentation = false
         self.searchController.searchResultsUpdater = self
         self.definesPresentationContext = true // get rid of warning: The topViewController of the navigation controller containing the presented search controller must have definesPresentationContext set to YES. Also, if we don't do this the nav bar disappears when we pop :face_with_rolling_eyes:
+        #endif
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -110,6 +114,7 @@ open class ItemsViewController<Item>: UITableViewController, UISearchResultsUpda
         return cell
     }
     
+    #if os(iOS)
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if #available(iOS 11.0, *) {
@@ -127,8 +132,10 @@ open class ItemsViewController<Item>: UITableViewController, UISearchResultsUpda
             }
         }
     }
+    #endif
 
     public func updateSearchResults(for searchController: UISearchController) {
+        #if os(iOS)
         guard let filterFunc = self.searchFilter else { return }
         guard let searchText = searchController.searchBar.text, !searchText.isEmpty else {
             filteredItems = items
@@ -139,5 +146,6 @@ open class ItemsViewController<Item>: UITableViewController, UISearchResultsUpda
             return subItems.filter { filterFunc(searchText, $0) }
         }
         tableView.reloadData()
+        #endif
     }
 }
