@@ -9,9 +9,9 @@
 import UIKit
 
 public extension UIViewController {
-    public func embed(_ childVC: UIViewController) {
-        addChildViewController(childVC)
+    func embed(_ childVC: UIViewController) {
+        addChild(childVC)
         self.view.embed(childVC.view)
-        childVC.didMove(toParentViewController: self)
+        childVC.didMove(toParent: self)
     }
 }

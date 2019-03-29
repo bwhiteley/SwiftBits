@@ -66,7 +66,7 @@ open class ItemsViewController<Item>: UITableViewController, UISearchResultsUpda
     }
     #endif
     
-    public init(items: [[Item]], style: UITableViewStyle = .plain, cellDescriptor: @escaping (Item) -> CellDescriptor) {
+    public init(items: [[Item]], style: UITableView.Style = .plain, cellDescriptor: @escaping (Item) -> CellDescriptor) {
         self.cellDescriptor = cellDescriptor
         super.init(style: style)
         self.items = items

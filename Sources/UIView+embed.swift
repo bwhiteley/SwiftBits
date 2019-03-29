@@ -18,7 +18,7 @@ public extension UIView {
             ])
     }
     
-    public func embed(_ view: UIView) {
+    func embed(_ view: UIView) {
         self.addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.pinToEdges(of: self)

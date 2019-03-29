@@ -51,12 +51,12 @@ public extension UIViewController {
      
      - parameter behaviors: Behaviors to be added.
      */
-    public func addBehaviors(behaviors: [ViewControllerLifecycleBehavior]) {
+    func addBehaviors(behaviors: [ViewControllerLifecycleBehavior]) {
         let behaviorViewController = LifecycleBehaviorViewController(behaviors: behaviors)
         
-        addChildViewController(behaviorViewController)
+        addChild(behaviorViewController)
         view.addSubview(behaviorViewController.view)
-        behaviorViewController.didMove(toParentViewController: self)
+        behaviorViewController.didMove(toParent: self)
     }
     
     private final class LifecycleBehaviorViewController: UIViewController {
