@@ -7,30 +7,81 @@
 //
 
 import XCTest
+import Foundation
 @testable import SwiftBits
 
 class SwiftBitsTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testResource() {
+        
+        let expectation = self.expectation(description: "load")
+        
+        URLSession.shared.load(usersResource) { usersResult in
+            XCTAssertEqual(usersResult.value!.first!.id, 1)
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5, handler: nil)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testCombinedResource() {
+        
+        let expectation = self.expectation(description: "load")
+        
+        let combined = usersResource.c
+            .flatMap { (users:[User]) -> CombinedResource<User> in
+                let id = users.first!.id
+                let url = URL(string: "https://jsonplaceholder.typicode.com/users/\(id)")!
+                return Resource<User>(get: url).c
         }
+        
+        URLSession.shared.load(combined) { usersResult in
+            XCTAssertEqual(usersResult.value!.id, 1)
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5, handler: nil)
+    }
+
+    func testZippedResource() {
+        
+        let expectation = self.expectation(description: "load")
+        
+        let combined: CombinedResource<String> = usersResource.c
+            .flatMap { (users:[User]) in
+                let id1 = users.first!.id
+                let id2 = users.last!.id
+                let url1 = URL(string: "https://jsonplaceholder.typicode.com/users/\(id1)")!
+                let url2 = URL(string: "https://jsonplaceholder.typicode.com/users/\(id2)")!
+                return Resource<User>(get: url1).c
+                    .zipWith(Resource<User>(get: url2).c) { user1, user2 -> String in
+                        return "\(user1.id),\(user2.id)"
+                }
+        }
+        
+        URLSession.shared.load(combined) { usersResult in
+            XCTAssertEqual(usersResult.value!, "1,10")
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5, handler: nil)
     }
     
 }
+
+struct User: Decodable {
+    let name: String
+    let id: Int
+    let username: String
+}
+
+let usersResource = Resource<[User]>(get: URL(string: "https://jsonplaceholder.typicode.com/users")!)
+

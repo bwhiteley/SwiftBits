@@ -5,6 +5,8 @@
 //  Created by Bart Whiteley on 11/2/16.
 //
 
+import Foundation
+
 // https://talk.objc.io/episodes/S01E42-thread-safety-reactive-programming-5
 final class AtomicProperty<A> {
     private var queue = DispatchQueue(label: "com.swift-bit.AtomicProperty")
