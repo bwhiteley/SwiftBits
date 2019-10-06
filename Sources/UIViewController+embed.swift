@@ -6,6 +6,7 @@
 //  Copyright © 2017 SwiftBit. All rights reserved.
 //
 
+#if !os(macOS)
 import UIKit
 
 public extension UIViewController {
@@ -15,3 +16,4 @@ public extension UIViewController {
         childVC.didMove(toParent: self)
     }
 }
+#endif

@@ -6,6 +6,7 @@
 //  Copyright © 2016 SwiftBit. All rights reserved.
 //
 
+#if !os(macOS)
 import UIKit
 
 public protocol Storyboarded: class {
@@ -24,3 +25,4 @@ extension Storyboarded {
         }
     }
 }
+#endif

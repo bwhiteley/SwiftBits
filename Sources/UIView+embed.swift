@@ -6,6 +6,7 @@
 //  Copyright © 2017 SwiftBit. All rights reserved.
 //
 
+#if !os(macOS)
 import UIKit
 
 public extension UIView {
@@ -24,3 +25,4 @@ public extension UIView {
         view.pinToEdges(of: self)
     }
 }
+#endif

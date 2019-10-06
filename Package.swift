@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "SwiftBits",
-    platforms: [.iOS(.v11)],
+    platforms: [.iOS(.v11), .macOS(.v10_14), .tvOS(.v11), .watchOS(.v5)],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
@@ -25,6 +25,7 @@ let package = Package(
             path: "Sources"),
         .testTarget(
             name: "SwiftBitsTests",
-            dependencies: ["SwiftBits"]),
+            dependencies: ["SwiftBits"],
+            path: "SwiftBitsTests"),
     ]
 )

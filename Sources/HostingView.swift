@@ -7,21 +7,30 @@
 //
 
 import Foundation
-import UIKit
+//import UIKit
 import SwiftUI
 
-@available(iOS 13.0, *)
-open class HostingView<Content> : UIView where Content : View {
-    
-    private let hostingVC: UIHostingController<Content>
-    
+#if os(macOS)
+public typealias PlatformViewType = NSView
+#else
+public typealias PlatformViewType = UIView
+#endif
+
+@available(iOS 13.0, macOS 10.15, *)
+open class HostingView<Content> : PlatformViewType where Content : View {
+    #if os(macOS)
+    typealias HostingController = NSHostingController
+    #else
+    typealias HostingController = UIHostingController
+    #endif
+    private let hostingVC: HostingController<Content>
     public var rootView: Content {
         get { return hostingVC.rootView }
         set { hostingVC.rootView = newValue }
     }
-
+    
     public init(rootView: Content) {
-        self.hostingVC = UIHostingController(rootView: rootView)
+        self.hostingVC = HostingController(rootView: rootView)
         super.init(frame: .zero)
         addSubview(hostingVC.view)
         hostingVC.view.translatesAutoresizingMaskIntoConstraints = false

@@ -7,6 +7,8 @@
 //
 
 import Foundation
+
+#if !os(macOS)
 import UIKit
 
 weak private var _firstResponder:AnyObject?
@@ -23,3 +25,4 @@ extension UIResponder {
         _firstResponder = self
     }
 }
+#endif

@@ -6,6 +6,7 @@
 //  Copyright © 2016 SwiftBit. All rights reserved.
 //
 
+#if !os(macOS)
 import UIKit
 // https://gist.github.com/bwhiteley/049e4bede49e71a6d2e2
 
@@ -27,3 +28,4 @@ extension NibView {
         self.embed(contentView)
     }
 }
+#endif

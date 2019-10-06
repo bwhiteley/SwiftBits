@@ -8,6 +8,7 @@
 
 // https://talk.objc.io/episodes/S01E26-generic-table-view-controllers-part-2
 
+#if !os(macOS)
 import UIKit
 
 public struct CellDescriptor {
@@ -149,3 +150,4 @@ open class ItemsViewController<Item>: UITableViewController, UISearchResultsUpda
         #endif
     }
 }
+#endif

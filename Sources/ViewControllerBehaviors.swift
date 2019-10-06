@@ -8,6 +8,7 @@
 
 // http://irace.me/lifecycle-behaviors
 
+#if !os(macOS)
 import UIKit
 
 public protocol ViewControllerLifecycleBehavior {
@@ -145,4 +146,5 @@ public extension UIViewController {
         }
     }
 }
+#endif
 

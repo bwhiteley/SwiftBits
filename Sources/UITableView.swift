@@ -6,6 +6,7 @@
 //  Copyright © 2016 SwiftBit. All rights reserved.
 //
 
+#if !os(macOS)
 import UIKit
 
 extension UITableView {
@@ -17,3 +18,4 @@ extension UITableView {
         return self.indexPathForRow(at: point)
     }
 }
+#endif

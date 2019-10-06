@@ -6,13 +6,11 @@
 //  Copyright © 2017 SwiftBit. All rights reserved.
 //
 
+#if !os(macOS)
 import UIKit
 
 @IBDesignable
 public class FlexBoxView: UIView {
-    
-    
-    
     public enum Axis {
         case horizontal
         case vertical
@@ -141,4 +139,4 @@ public class FlexBoxView: UIView {
     
     
 }
-
+#endif
