@@ -22,6 +22,7 @@
 		71ECBB031F077D1700BEBAC6 /* FlexBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ECBB021F077D1700BEBAC6 /* FlexBoxView.swift */; };
 		CC02DDD31DCA6ED100A137C3 /* AtomicProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC02DDD21DCA6ED100A137C3 /* AtomicProperty.swift */; };
 		CC03A3831E9F0EF500DBD8E8 /* ViewControllerBehaviors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC03A3821E9F0EF500DBD8E8 /* ViewControllerBehaviors.swift */; };
+		CCCDC2782349BA010040EEC8 /* HostingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCDC2772349BA010040EEC8 /* HostingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		71ECBB021F077D1700BEBAC6 /* FlexBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexBoxView.swift; sourceTree = "<group>"; };
 		CC02DDD21DCA6ED100A137C3 /* AtomicProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtomicProperty.swift; sourceTree = "<group>"; };
 		CC03A3821E9F0EF500DBD8E8 /* ViewControllerBehaviors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerBehaviors.swift; sourceTree = "<group>"; };
+		CCCDC2772349BA010040EEC8 /* HostingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				CC02DDD21DCA6ED100A137C3 /* AtomicProperty.swift */,
 				CC03A3821E9F0EF500DBD8E8 /* ViewControllerBehaviors.swift */,
 				71ECBB021F077D1700BEBAC6 /* FlexBoxView.swift */,
+				CCCDC2772349BA010040EEC8 /* HostingView.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				71DB6F721EB5601300D89AFA /* UIViewController+embed.swift in Sources */,
 				714B1D081DC5899100469BFB /* UITableView.swift in Sources */,
 				714B1D0A1DC589C400469BFB /* NibView.swift in Sources */,
+				CCCDC2782349BA010040EEC8 /* HostingView.swift in Sources */,
 				71ECBB031F077D1700BEBAC6 /* FlexBoxView.swift in Sources */,
 				7142ACA91DEAC2B10017C18D /* ItemsViewController.swift in Sources */,
 				71394DC51E0CD99200F6B0F3 /* UIResponder+FirstResponder.swift in Sources */,
