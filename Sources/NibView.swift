@@ -6,7 +6,7 @@
 //  Copyright © 2016 SwiftBit. All rights reserved.
 //
 
-#if !os(macOS)
+#if !os(macOS) && !os(watchOS)
 import UIKit
 // https://gist.github.com/bwhiteley/049e4bede49e71a6d2e2
 

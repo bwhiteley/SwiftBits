@@ -6,7 +6,7 @@
 //  Copyright © 2016 SwiftBit. All rights reserved.
 //
 
-#if !os(macOS)
+#if !os(macOS) && !os(watchOS)
 import UIKit
 
 public protocol Storyboarded: class {

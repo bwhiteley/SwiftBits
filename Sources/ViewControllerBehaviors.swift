@@ -8,7 +8,7 @@
 
 // http://irace.me/lifecycle-behaviors
 
-#if !os(macOS)
+#if !os(macOS) && !os(watchOS)
 import UIKit
 
 public protocol ViewControllerLifecycleBehavior {

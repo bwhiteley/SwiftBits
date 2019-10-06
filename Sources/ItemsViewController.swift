@@ -8,7 +8,7 @@
 
 // https://talk.objc.io/episodes/S01E26-generic-table-view-controllers-part-2
 
-#if !os(macOS)
+#if !os(macOS) && !os(watchOS)
 import UIKit
 
 public struct CellDescriptor {

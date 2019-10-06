@@ -12,11 +12,12 @@ import SwiftUI
 
 #if os(macOS)
 public typealias PlatformViewType = NSView
-#else
+#elseif !os(watchOS)
 public typealias PlatformViewType = UIView
 #endif
 
-@available(iOS 13.0, macOS 10.15, *)
+#if !os(watchOS)
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, *)
 open class HostingView<Content> : PlatformViewType where Content : View {
     #if os(macOS)
     typealias HostingController = NSHostingController
@@ -47,3 +48,4 @@ open class HostingView<Content> : PlatformViewType where Content : View {
         fatalError("init(coder:) has not been implemented")
     }
 }
+#endif
