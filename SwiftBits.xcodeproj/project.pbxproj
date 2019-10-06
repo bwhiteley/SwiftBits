@@ -122,8 +122,8 @@
       "OBJ_25" = {
          isa = "PBXGroup";
          children = (
-            "SwiftBits::SwiftBitsTests::Product",
-            "SwiftBits::SwiftBits::Product"
+            "SwiftBits::SwiftBits::Product",
+            "SwiftBits::SwiftBitsTests::Product"
          );
          name = "Products";
          path = "";
@@ -212,7 +212,7 @@
                "$(inherited)"
             );
             INFOPLIST_FILE = "SwiftBits.xcodeproj/SwiftBits_Info.plist";
-            IPHONEOS_DEPLOYMENT_TARGET = "11.0";
+            IPHONEOS_DEPLOYMENT_TARGET = "10.0";
             LD_RUNPATH_SEARCH_PATHS = (
                "$(inherited)",
                "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
@@ -253,7 +253,7 @@
                "$(inherited)"
             );
             INFOPLIST_FILE = "SwiftBits.xcodeproj/SwiftBits_Info.plist";
-            IPHONEOS_DEPLOYMENT_TARGET = "11.0";
+            IPHONEOS_DEPLOYMENT_TARGET = "10.0";
             LD_RUNPATH_SEARCH_PATHS = (
                "$(inherited)",
                "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
@@ -522,7 +522,7 @@
                "$(inherited)"
             );
             INFOPLIST_FILE = "SwiftBits.xcodeproj/SwiftBitsTests_Info.plist";
-            IPHONEOS_DEPLOYMENT_TARGET = "11.0";
+            IPHONEOS_DEPLOYMENT_TARGET = "10.0";
             LD_RUNPATH_SEARCH_PATHS = (
                "$(inherited)",
                "@loader_path/../Frameworks",
@@ -561,7 +561,7 @@
                "$(inherited)"
             );
             INFOPLIST_FILE = "SwiftBits.xcodeproj/SwiftBitsTests_Info.plist";
-            IPHONEOS_DEPLOYMENT_TARGET = "11.0";
+            IPHONEOS_DEPLOYMENT_TARGET = "10.0";
             LD_RUNPATH_SEARCH_PATHS = (
                "$(inherited)",
                "@loader_path/../Frameworks",
