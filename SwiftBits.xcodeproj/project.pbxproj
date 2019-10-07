@@ -236,7 +236,7 @@
             );
             SWIFT_VERSION = "5.0";
             TARGET_NAME = "SwiftBits";
-            TVOS_DEPLOYMENT_TARGET = "11.0";
+            TVOS_DEPLOYMENT_TARGET = "10.0";
             WATCHOS_DEPLOYMENT_TARGET = "5.0";
          };
          name = "Debug";
@@ -277,7 +277,7 @@
             );
             SWIFT_VERSION = "5.0";
             TARGET_NAME = "SwiftBits";
-            TVOS_DEPLOYMENT_TARGET = "11.0";
+            TVOS_DEPLOYMENT_TARGET = "10.0";
             WATCHOS_DEPLOYMENT_TARGET = "5.0";
          };
          name = "Release";
@@ -543,7 +543,7 @@
             );
             SWIFT_VERSION = "5.0";
             TARGET_NAME = "SwiftBitsTests";
-            TVOS_DEPLOYMENT_TARGET = "11.0";
+            TVOS_DEPLOYMENT_TARGET = "10.0";
             WATCHOS_DEPLOYMENT_TARGET = "5.0";
          };
          name = "Debug";
@@ -582,7 +582,7 @@
             );
             SWIFT_VERSION = "5.0";
             TARGET_NAME = "SwiftBitsTests";
-            TVOS_DEPLOYMENT_TARGET = "11.0";
+            TVOS_DEPLOYMENT_TARGET = "10.0";
             WATCHOS_DEPLOYMENT_TARGET = "5.0";
          };
          name = "Release";

@@ -6,13 +6,15 @@
 //  Copyright © 2019 SwiftBit. All rights reserved.
 //
 
+#if false // For some reason this doesn't work if we set the deployment target to iOS 10.
+
 import Foundation
-//import UIKit
 import SwiftUI
 
 #if os(macOS)
 public typealias PlatformViewType = NSView
 #elseif !os(watchOS)
+import UIKit
 public typealias PlatformViewType = UIView
 #endif
 
@@ -49,3 +51,6 @@ open class HostingView<Content> : PlatformViewType where Content : View {
     }
 }
 #endif
+
+#endif
+
