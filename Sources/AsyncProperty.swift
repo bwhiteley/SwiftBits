@@ -9,50 +9,52 @@ import Foundation
 
 public class AsyncProperty<Value, ErrorType: Error> {
     public func get(_ completion:@escaping (Result<Value, ErrorType>) -> Void) {
-        switch state.value {
-        case .storedValue(let result):
-            completion(result)
-        case .initial:
-            self.resultClosures.mutate() { closures in
-                closures.append(completion)
-            }
-            load()
-        case .loading:
-            self.resultClosures.mutate() { closures in
-                closures.append(completion)
+        queue.sync {
+            switch state {
+            case .storedValue(let result):
+                completion(result)
+            case .initial:
+                resultClosures.append(completion)
+                doLoad()
+            case .loading:
+                self.resultClosures.append(completion)
             }
         }
     }
     
     public func load() {
-        state.mutate() { state in
-            switch state {
-            case .loading, .storedValue(_): return
-            case .initial: break
-            }
-            
-            self.loadValue() { result in
-                self.state.mutate() { state in
-                    self.resultClosures.mutate { closures in
-                        for closure in closures {
-                            closure(result)
-                        }
-                        closures = []
-                    }
-                    state = .storedValue(result)
-                }
-            }
-            state = .loading
+        queue.sync {
+            self.doLoad()
         }
     }
     
+    private func doLoad() {
+        switch self.state {
+        case .loading, .storedValue(_): return
+        case .initial: break
+        }
+        
+        self.loadValue() { result in
+            self.queue.sync {
+                for closure in self.resultClosures {
+                    closure(result)
+                }
+                self.resultClosures = []
+            }
+            self.state = .storedValue(result)
+        }
+        state = .loading
+    }
+
     public init(loader: @escaping ( @escaping (Result<Value, ErrorType>) -> Void) -> Void) {
         self.loadValue = loader
     }
     
-    private var state: AtomicProperty<State> = AtomicProperty(.initial)
+    private var queue = DispatchQueue(label: "AsyncProperty")
+    
+    private var state: State = .initial
         
-    private var resultClosures: AtomicProperty<[(Result<Value, ErrorType>) -> Void]> = AtomicProperty([])
+    private var resultClosures: [(Result<Value, ErrorType>) -> Void] = []
         
     private var loadValue: (@escaping (Result<Value, ErrorType>) -> Void) -> Void
     
