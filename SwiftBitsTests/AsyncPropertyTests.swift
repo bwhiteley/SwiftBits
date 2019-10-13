@@ -9,17 +9,9 @@ import XCTest
 @testable import SwiftBits
 
 class AsyncPropertyTests: XCTestCase {
-    
-    var asyncProperty: AsyncProperty<Int, Error>!
-    
+        
     override func setUp() {
         super.setUp()
-        self.asyncProperty = AsyncProperty() { (completion:@escaping (Result<Int, Error>) -> Void) in
-            DispatchQueue.global().async {
-                usleep(1_000)
-                completion(.success(42))
-            }
-        }
     }
     
     override func tearDown() {
@@ -27,7 +19,7 @@ class AsyncPropertyTests: XCTestCase {
     }
     
     func testGet() {
-        self.asyncProperty = AsyncProperty() { (completion:@escaping (Result<Int, Error>) -> Void) in
+        let asyncProperty = AsyncProperty() { (completion:@escaping (Result<Int, Error>) -> Void) in
             DispatchQueue.main.async {
                 usleep(1_000)
                 completion(.success(42))
@@ -46,7 +38,7 @@ class AsyncPropertyTests: XCTestCase {
     func testMultipleGet() {
         let expectationLoad = expectation(description: "load")
         
-        self.asyncProperty = AsyncProperty() { (completion:@escaping (Result<Int, Error>) -> Void) in
+        let asyncProperty = AsyncProperty() { (completion:@escaping (Result<Int, Error>) -> Void) in
             DispatchQueue.global().async {
                 usleep(1_000)
                 completion(.success(42))
@@ -72,7 +64,7 @@ class AsyncPropertyTests: XCTestCase {
     func testLoad() {
         let expectationLoad = expectation(description: "load")
         
-        self.asyncProperty = AsyncProperty() { (completion:@escaping (Result<Int, Error>) -> Void) in
+        let asyncProperty = AsyncProperty() { (completion:@escaping (Result<Int, Error>) -> Void) in
             DispatchQueue.global().async {
                 usleep(1_000)
                 completion(.success(42))
@@ -104,7 +96,7 @@ class AsyncPropertyTests: XCTestCase {
 
         var loadCount: Int = 0
         
-        self.asyncProperty = AsyncProperty() { (completion:@escaping (Result<Int, Error>) -> Void) in
+        let asyncProperty = AsyncProperty() { (completion:@escaping (Result<Int, Error>) -> Void) in
             DispatchQueue.global().async {
                 usleep(1_000)
                 if loadCount == 0 {
@@ -151,7 +143,7 @@ class AsyncPropertyTests: XCTestCase {
 
         var loadCount: Int = 0
         
-        self.asyncProperty = AsyncProperty() { (completion:@escaping (Result<Int, Error>) -> Void) in
+        let asyncProperty = AsyncProperty() { (completion:@escaping (Result<Int, Error>) -> Void) in
             DispatchQueue.global().async {
                 usleep(1_000)
                 if loadCount == 0 {
