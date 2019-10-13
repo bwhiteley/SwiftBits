@@ -17,7 +17,7 @@ public class AsyncProperty<Value, ErrorType: Error> {
                 resultClosures.append(completion)
                 doLoad()
             case .loading:
-                self.resultClosures.append(completion)
+                resultClosures.append(completion)
             }
         }
     }
@@ -28,8 +28,30 @@ public class AsyncProperty<Value, ErrorType: Error> {
         }
     }
     
+    public func reset() {
+        queue.sync {
+            switch state {
+            case .loading, .initial: return
+            case .storedValue:
+                state = .initial
+            }
+        }
+    }
+    
+    public func reload() {
+        queue.sync {
+            switch state {
+            case .loading: return
+            case .storedValue:
+                state = .initial
+                fallthrough
+            case .initial: doLoad()
+            }
+        }
+    }
+    
     private func doLoad() {
-        switch self.state {
+        switch state {
         case .loading, .storedValue(_): return
         case .initial: break
         }
