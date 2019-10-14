@@ -50,6 +50,7 @@ public class AsyncProperty<Value, ErrorType: Error> {
         }
     }
     
+    // This should always be called withing queue.sync {}
     private func doLoad() {
         switch state {
         case .loading, .storedValue(_): return
