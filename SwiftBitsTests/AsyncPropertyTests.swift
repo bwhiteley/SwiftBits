@@ -34,7 +34,22 @@ class AsyncPropertyTests: XCTestCase {
         }
         waitForExpectations(timeout: 1, handler: nil)
     }
-    
+
+    func testNonAsync() {
+        // If the loading function is synchronous, make sure we don't deadlock.
+        let asyncProperty = AsyncProperty() { (completion:@escaping (Result<Int, Error>) -> Void) in
+            completion(.success(42))
+        }
+
+        let expectation1 = expectation(description: "one")
+        asyncProperty.get { result in
+            let value = try? result.get()
+            XCTAssertEqual(value, 42)
+            expectation1.fulfill()
+        }
+        waitForExpectations(timeout: 1, handler: nil)
+    }
+
     func testMultipleGet() {
         let expectationLoad = expectation(description: "load")
         

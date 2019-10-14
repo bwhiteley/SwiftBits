@@ -50,21 +50,26 @@ public class AsyncProperty<Value, ErrorType: Error> {
         }
     }
     
-    // This should always be called withing queue.sync {}
+    // This should always be called within queue.sync {}
     private func doLoad() {
         switch state {
         case .loading, .storedValue(_): return
         case .initial: break
         }
         
-        self.loadValue() { result in
-            self.queue.sync {
-                for closure in self.resultClosures {
-                    closure(result)
+        // Force the loading function to be async.
+        // Otherwise we'll deadlock if the user provides
+        // a synchronous function.
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.loadValue() { result in
+                self.queue.sync {
+                    for closure in self.resultClosures {
+                        closure(result)
+                    }
+                    self.resultClosures = []
                 }
-                self.resultClosures = []
+                self.state = .storedValue(result)
             }
-            self.state = .storedValue(result)
         }
         state = .loading
     }
