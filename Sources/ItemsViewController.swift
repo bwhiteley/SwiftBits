@@ -34,7 +34,7 @@ open class ItemsViewController<Item>: UITableViewController, UISearchResultsUpda
         }
     }
     var filteredItems: [[Item]] = []
-    let cellDescriptor: (Item) -> CellDescriptor
+    public var cellDescriptor: (Item) -> CellDescriptor
     public var didSelect: (Item) -> () = { _ in }
     var reuseIdentifiers: Set<String> = []
     
