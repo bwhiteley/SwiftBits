@@ -10,7 +10,7 @@
 import UIKit
 // https://gist.github.com/bwhiteley/049e4bede49e71a6d2e2
 
-public protocol NibView: class {
+public protocol NibView: AnyObject {
     var contentView:UIView! { get set }
     
     func embed(_ view: UIView)

@@ -9,7 +9,7 @@
 #if !os(macOS) && !os(watchOS)
 import UIKit
 
-public protocol Storyboarded: class {
+public protocol Storyboarded: AnyObject {
     static func storyboardInfo() -> (storyboardName:String, storyboardId:String?)
 }
 
