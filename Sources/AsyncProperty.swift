@@ -8,6 +8,14 @@
 import Foundation
 
 public class AsyncProperty<Value, ErrorType: Error> {
+    
+    @available(iOS 15.0.0, *)
+    public func get() async throws -> Value {
+        return try await withCheckedThrowingContinuation({ continuation in
+            get(continuation.resume)
+        })
+    }
+
     public func get(_ completion:@escaping (Result<Value, ErrorType>) -> Void) {
         queue.sync {
             switch state {
@@ -76,6 +84,19 @@ public class AsyncProperty<Value, ErrorType: Error> {
 
     public init(loader: @escaping ( @escaping (Result<Value, ErrorType>) -> Void) -> Void) {
         self.loadValue = loader
+    }
+    
+    @available(iOS 15.0, *)
+    public init(loader:@escaping () async throws -> Value) where ErrorType == Error {
+        self.loadValue = { (completion: @escaping (Result<Value, Error>) -> Void) -> Void in
+            Task {
+                do {
+                    completion(.success(try await loader()))
+                } catch {
+                    completion(.failure(error))
+                }
+            }
+        }
     }
     
     private var queue = DispatchQueue(label: "AsyncProperty")

@@ -76,6 +76,17 @@ class AsyncPropertyTests: XCTestCase {
         waitForExpectations(timeout: 1, handler: nil)
     }
     
+    @available(iOS 15.0, *)
+    func testMultipleGetSwiftConcurrency() async throws {
+        let asyncProperty = AsyncProperty() {
+            return 42
+        }
+        var value = try await asyncProperty.get()
+        XCTAssertEqual(value, 42)
+        value = try await asyncProperty.get()
+        XCTAssertEqual(value, 42)
+    }
+    
     func testLoad() {
         let expectationLoad = expectation(description: "load")
         
