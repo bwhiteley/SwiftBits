@@ -33,7 +33,7 @@ open class ItemsViewController<Item>: UITableViewController, UISearchResultsUpda
             filteredItems = items
         }
     }
-    var filteredItems: [[Item]] = []
+    public var filteredItems: [[Item]] = []
     public var cellDescriptor: (Item) -> CellDescriptor
     public var didSelect: (Item) -> () = { _ in }
     var reuseIdentifiers: Set<String> = []
